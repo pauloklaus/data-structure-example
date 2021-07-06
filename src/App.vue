@@ -11,7 +11,7 @@
             <router-view />
         </div>
         <div class="footer">
-            <a href="https://pauloklaus.com.br">pauloklaus.com.br</a> {{ (new Date()).getFullYear() }} &bullet; <a href="https://github.com/pauloklaus/data-structure-examples">github.com/pauloklaus/data-structure-examples</a>
+            <a href="https://pauloklaus.com.br">pauloklaus.com.br</a> {{ (new Date()).getFullYear() }} &bullet; <a href="https://github.com/pauloklaus/data-structure-example">github.com/pauloklaus/data-structure-example</a>
         </div>
     </div>
 </template>
