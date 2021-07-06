@@ -165,7 +165,7 @@ h2, p {
     text-align: center;
 }
 .start button {
-    margin: 0 4px;
+    margin: 4px;
     padding: 5px 10px;
     background-color: var(--secondary);
 }

@@ -116,6 +116,7 @@ p, .input {
     display: flex;
 }
 .input-element {
+    background-color: white;
     flex-grow: 1;
 }
 .input-element input {

@@ -125,6 +125,7 @@ p, .input {
     padding: 5px;
 }
 .input-task {
+    background-color: white;
     flex-grow: 1;
 }
 .input-task input {
