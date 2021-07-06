@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Queue from "@/lib/Queue";
+import Queue from "@/lib/Structures/Queue";
 import error from "@/mixins/error";
 
 export default {

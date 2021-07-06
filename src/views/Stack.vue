@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import Stack from "@/lib/Stack";
+import Stack from "@/lib/Structures/Stack";
 import error from "@/mixins/error";
 
 export default {
