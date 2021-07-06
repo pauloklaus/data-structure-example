@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Queue from "../views/Queue.vue";
 import Stack from "../views/Stack.vue";
+import Sort from "../views/Sort.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
         path: "/stack",
         name: "Stack",
         component: Stack
+    },
+    {
+        path: "/sort",
+        name: "Sort",
+        component: Sort
     },
     {
         path: "*",

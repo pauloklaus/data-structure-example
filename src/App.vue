@@ -3,8 +3,7 @@
         <div class="header">
             <div><strong>Data Structure Example</strong></div>
             <nav>
-                <router-link to="queue" active-class="nav-active">Queue</router-link>
-                <router-link to="stack" active-class="nav-active">Stack</router-link>
+                <router-link v-for="(option, index) in options" :key="index" :to="option.route" active-class="nav-active">{{ option.title }}</router-link>
             </nav>
         </div>
         <div class="content">
@@ -15,6 +14,20 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            options: [
+                { route: "queue", title: "Queue" },
+                { route: "stack", title: "Stack" },
+                { route: "sort", title: "Sort" },
+            ]
+        }
+    }
+}
+</script>
 
 <style>
 #app {
