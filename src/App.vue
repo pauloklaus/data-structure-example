@@ -4,6 +4,7 @@
             <div><strong>Data Structure Examples</strong></div>
             <nav>
                 <router-link to="queue" active-class="nav-active">Queue</router-link>
+                <router-link to="stack" active-class="nav-active">Stack</router-link>
             </nav>
         </div>
         <div class="content">
@@ -34,6 +35,9 @@
     width: 100%;
     font-size: 1.3rem;
     padding: 10px 0 10px 0;
+}
+#app .header a:not(:first-child) {
+    padding-left: 10px;
 }
 
 #app .content {

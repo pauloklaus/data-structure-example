@@ -36,8 +36,10 @@
 
 <script>
 import Queue from "@/lib/Queue";
+import error from "@/mixins/error";
 
 export default {
+    mixins: [ error ],
     data() {
         return {
             task: "",
@@ -47,10 +49,6 @@ export default {
                 status: 0
             },
             interval: null,
-            error: {
-                timeout: null,
-                message: ""
-            },
         }
     },
     created() {
@@ -63,22 +61,6 @@ export default {
         this.taskFocus();
     },
     methods: {
-        clearError() {
-            if (this.error.timeout) {
-                clearTimeout(this.error.timeout);
-                this.error.timeout = null;
-                this.error.message = "";
-            }
-        },
-        showError(error) {
-            this.clearError();
-
-            this.error.message = error;
-
-            this.error.timeout = setTimeout(() => {
-                this.error.message = "";
-            }, 2000);
-        },
         taskFocus() {
             this.$nextTick(() => {
                 this.$refs.task.focus();
