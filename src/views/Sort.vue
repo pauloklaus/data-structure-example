@@ -21,6 +21,7 @@
             <div class="start">
                 <button ref="sort" :disabled="processing" @click="start('selectionSort')">Selection</button>
                 <button :disabled="processing" @click="start('insertionSort')">Insertion</button>
+                <button :disabled="processing" @click="start('mergeSort')">Merge</button>
             </div>
 
             <div v-if="inOrder.length" class="result">
@@ -35,6 +36,7 @@
 <script>
 import selectionSort from "@/lib/Sort/Selection";
 import insertionSort from "@/lib/Sort/Insertion";
+import mergeSort from "@/lib/Sort/Merge";
 
 export default {
     data() {
@@ -87,6 +89,9 @@ export default {
             switch (algorithm) {
                 case "insertionSort":
                     return insertionSort;
+
+                case "mergeSort":
+                    return mergeSort;
 
                 case "selectionSort":
                 default:
