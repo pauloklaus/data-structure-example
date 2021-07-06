@@ -1,6 +1,7 @@
 {
   "name": "data-structure-examples",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "description": "Data structure examples",
   "author": {
     "name": "Paulo Sergio Klaus",
     "email": "contato@pauloklaus.com.br"
@@ -9,7 +10,8 @@
       "vue",
       "vuejs",
       "data-structure",
-      "queue"
+      "queue",
+      "stack"
   ],
   "license": "GPLv3",
   "private": false,

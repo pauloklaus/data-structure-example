@@ -1,5 +1,9 @@
 # data-structure-examples
 
+For educational purposes.
+
+Live testing: <https://data-structure-examples.pages.dev>
+
 ## Project setup
 ```
 npm install
