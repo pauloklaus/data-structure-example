@@ -16,6 +16,8 @@
 * {
     font-family: "Source Sans Pro";
     margin: 0;
+    outline: none;
+    border: none;
 }
 
 body {
@@ -25,20 +27,21 @@ body {
 }
 
 input {
-    border: none;
     font-size: 1.2rem;
-    outline: none;
     padding: 5px;
 }
 
 button {
     background-color: var(--primary);
-    border: none;
     font-size: 1.2rem;
-    outline: none;
-    padding: 0 10px;
+    padding: 5px 10px;
 }
+button:hover,
 button:focus {
-    color: var(--light);
-    background-color: var(--primary-darkness);
+    box-shadow: 0 0 10px black;
+    font-weight: bold;
+}
+button:active {
+    color: var(--primary-darkness);
+    background-color: var(--light);
 }
