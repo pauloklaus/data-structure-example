@@ -1,8 +1,8 @@
-# data-structure-examples
+# data-structure-example
 
 For educational purposes.
 
-Live testing: <https://data-structure-examples.pages.dev>
+Live testing: <https://data-structure-example.pages.dev>
 
 ## Project setup
 ```

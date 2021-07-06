@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="header">
-            <div><strong>Data Structure Examples</strong></div>
+            <div><strong>Data Structure Example</strong></div>
             <nav>
                 <router-link to="queue" active-class="nav-active">Queue</router-link>
                 <router-link to="stack" active-class="nav-active">Stack</router-link>
