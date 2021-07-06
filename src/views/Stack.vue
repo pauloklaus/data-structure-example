@@ -75,10 +75,12 @@ export default {
                 this.clearError();
                 this.stack.add(this.element);
                 this.element = "";
-                this.elementFocus();
             }
             catch (error) {
                 this.showError(error.message);
+            }
+            finally {
+                this.elementFocus();
             }
         },
         startProcess() {
@@ -114,7 +116,6 @@ p, .input {
     display: flex;
 }
 .input-element {
-    background-color: white;
     flex-grow: 1;
 }
 .input-element input {

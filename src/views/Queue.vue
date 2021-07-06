@@ -77,10 +77,12 @@ export default {
                 this.clearError();
                 this.queue.add(this.task);
                 this.task = "";
-                this.taskFocus();
             }
             catch (error) {
                 this.showError(error.message);
+            }
+            finally {
+                this.taskFocus();
             }
         },
         startProcess() {
@@ -123,7 +125,6 @@ p, .input {
     padding: 5px;
 }
 .input-task {
-    background-color: white;
     flex-grow: 1;
 }
 .input-task input {
