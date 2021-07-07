@@ -25,6 +25,8 @@ function mergeItems(items, low, half, high) {
 
     for (let index = 0; index < (high - low); index++)
         items[low + index] = newItems[index];
+
+    console.log("mergeItems()", [...items]);
 }
 
 function splitItems(items, low, high) {
@@ -35,12 +37,17 @@ function splitItems(items, low, high) {
     splitItems(items, low, half);
     splitItems(items, half, high);
     mergeItems(items, low, half, high);
+
+    console.log("splitItems()", [...items]);
 }
 
 function mergeSort(items) {
+    console.time("mergeSort()");
+
     if (items.length > 1)
         splitItems(items, 0, items.length - 1);
 
+    console.timeEnd("mergeSort()");
     return items;
 }
 

@@ -11,10 +11,15 @@ function selectLow(items, low, high) {
 }
 
 function selectionSort(items) {
+    console.time("selectionSort()");
+
     if (items.length > 1)
-        for (let index = 0; index < items.length; index++)
+        for (let index = 0; index < items.length; index++) {
             swapItems(items, selectLow(items, index, items.length - 1), index);
+            console.log([...items]);
+        }
     
+    console.timeEnd("selectionSort()");
     return items;
 }
 

@@ -1,6 +1,8 @@
 import swapItems from "@/lib/Sort/SwapItems";
 
 function insertionSort(items) {
+    console.time("insertionSort()");
+
     if (items.length > 1)
         for (let index = 0; index < items.length; index++) {
             let compareIndex = index;
@@ -8,8 +10,10 @@ function insertionSort(items) {
                 swapItems(items, compareIndex, compareIndex - 1);
                 compareIndex--;
             }
+            console.log([...items]);
         }
     
+    console.timeEnd("insertionSort()");
     return items;
 }
 
