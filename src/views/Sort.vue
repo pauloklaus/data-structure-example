@@ -29,7 +29,7 @@
                 <div v-for="(number, index) in inOrder" :key="index">{{ number }}</div>
             </div>
 
-            <div v-if="inOrder.length" class="elapsed-time"><a :href="algorithmUrl">{{ algorithm }} sort</a> ran in {{ elapsedTime }}s</div>
+            <div v-if="inOrder.length" class="elapsed-time"><a :href="algorithmUrl">{{ algorithm }} sort</a> took {{ elapsedTime }}s to run</div>
         </template>
     </div>
 </template>
