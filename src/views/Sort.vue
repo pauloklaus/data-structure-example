@@ -29,7 +29,7 @@
                 <div v-for="(number, index) in inOrder" :key="index">{{ number }}</div>
             </div>
 
-            <div v-if="inOrder.length" class="elapsed-time">generated in {{ elapsedTime }} sec</div>
+            <div v-if="inOrder.length" class="elapsed-time"><a :href="algorithmUrl">{{ algorithm }} sort</a> ran in {{ elapsedTime }}s</div>
         </template>
     </div>
 </template>
@@ -48,6 +48,13 @@ export default {
             numbers: [],
             inOrder: [],
             elapsedTime: 0,
+            baseRepoUrl: "https://github.com/pauloklaus/data-structure-example/blob/main/src/lib/Sort/@.js",
+            algorithm: "",
+        }
+    },
+    computed: {
+        algorithmUrl() {
+            return this.baseRepoUrl.replace("@", this.algorithm);
         }
     },
     created() {
@@ -90,16 +97,20 @@ export default {
         chooseAlgorithm(algorithm) {
             switch (algorithm) {
                 case "insertionSort":
+                    this.algorithm = "Insertion";
                     return insertionSort;
 
                 case "mergeSort":
+                    this.algorithm = "Merge";
                     return mergeSort;
 
                 case "quickSort":
+                    this.algorithm = "Quick";
                     return quickSort;
 
                 case "selectionSort":
                 default:
+                    this.algorithm = "Selection";
                     return selectionSort;
             }
         },
