@@ -19,7 +19,8 @@
             <h2>Sort algorithm</h2>
 
             <div class="start">
-                <button ref="sort" :disabled="processing" @click="start('selectionSort')">Selection</button>
+                <button ref="sort" :disabled="processing" @click="start('bubbleSort')">Bubble</button>
+                <button :disabled="processing" @click="start('selectionSort')">Selection</button>
                 <button :disabled="processing" @click="start('insertionSort')">Insertion</button>
                 <button :disabled="processing" @click="start('mergeSort')">Merge</button>
                 <button :disabled="processing" @click="start('quickSort')">Quick</button>
@@ -29,12 +30,16 @@
                 <div v-for="(number, index) in inOrder" :key="index">{{ number }}</div>
             </div>
 
-            <div v-if="inOrder.length" class="elapsed-time"><a :href="algorithmUrl">{{ algorithm }} sort</a> took {{ elapsedTime }}s to run</div>
+            <div v-if="inOrder.length" class="elapsed-time">
+                <a :href="algorithmUrl">{{ algorithm }} sort</a> took {{ elapsedTime }}s to run
+                <br>check browser console for more details
+            </div>
         </template>
     </div>
 </template>
 
 <script>
+import bubbleSort from "@/lib/Sort/Bubble";
 import selectionSort from "@/lib/Sort/Selection";
 import insertionSort from "@/lib/Sort/Insertion";
 import mergeSort from "@/lib/Sort/Merge";
@@ -96,6 +101,10 @@ export default {
         },
         chooseAlgorithm(algorithm) {
             switch (algorithm) {
+                case "bubbleSort":
+                    this.algorithm = "Bubble";
+                    return bubbleSort;
+
                 case "insertionSort":
                     this.algorithm = "Insertion";
                     return insertionSort;
