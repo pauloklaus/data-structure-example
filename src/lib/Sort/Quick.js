@@ -1,33 +1,21 @@
-import swapItems from "@/lib/Sort/SwapItems";
+function startSort(items) {
+    if (items.length < 2)
+        return items;
 
-function partition(items, low, high) {
-    let lowIndex = low;
+    var pivot = items[0];
+    var left = [];
+    var right = [];
 
-    for (let index = low; index < high; index++)
-        if (items[index] < items[high]) {
-            swapItems(items, index, lowIndex);
-            lowIndex++;
-        }
+    for (var i = 1; i < items.length; i++)
+        items[i] < pivot ? left.push(items[i]) : right.push(items[i]);
 
-    swapItems(items, lowIndex, high);
-    console.log("partition()", [...items]);
-    return lowIndex;
+    console.log([...left], pivot, [...right]);
+    return startSort(left).concat(pivot, startSort(right));
 }
-
-function startSort(items, low, high) {
-    if (high - low > 0) {
-        const partitionIndex = partition(items, low, high);
-        startSort(items, low, partitionIndex - 1);
-        startSort(items, partitionIndex + 1, high);
-    }
-    console.log("quickSort()", [...items]);
-}
-
+  
 function quickSort(items) {
     console.time("quickSort()");
-
-    if (items.length > 1)
-        startSort(items, 0, items.length - 1);
+    startSort(items, 0, items.length - 1);
 
     console.timeEnd("quickSort()");
     return items;
