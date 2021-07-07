@@ -15,10 +15,10 @@ function startSort(items) {
   
 function quickSort(items) {
     console.time("quickSort()");
-    startSort(items, 0, items.length - 1);
+    const sort = startSort(items, 0, items.length - 1);
 
     console.timeEnd("quickSort()");
-    return items;
+    return sort;
 }
 
 export default quickSort;
