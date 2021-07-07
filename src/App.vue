@@ -1,15 +1,15 @@
 <template>
     <div id="app">
-        <div class="header">
+        <div id="header">
             <div><strong>Data Structure Example</strong></div>
             <nav>
                 <router-link v-for="(option, index) in options" :key="index" :to="option.route" active-class="nav-active">{{ option.title }}</router-link>
             </nav>
         </div>
-        <div class="content">
+        <div id="content">
             <router-view />
         </div>
-        <div class="footer">
+        <div id="footer">
             <a href="https://pauloklaus.com.br">pauloklaus.com.br</a> {{ (new Date()).getFullYear() }} &bullet; <a href="https://github.com/pauloklaus/data-structure-example">github.com/pauloklaus/data-structure-example</a>
         </div>
     </div>
@@ -40,36 +40,42 @@ export default {
     margin: 0 auto;
 }
 
-#app .header {
+#header {
     color: white;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
     font-size: 1.3rem;
     padding: 10px 0 10px 0;
 }
-#app .header a:not(:first-child) {
+#header div {
+    text-shadow: 0 0 10px black;
+}
+#header a:not(:first-child) {
     padding-left: 10px;
 }
 
-#app .content {
+#content {
     background-color: var(--content);
     border-radius: 10px;
     color: white;
     width: 100%;
     overflow: hidden;
 }
+#content a:any-link {
+    color: white;
+}
 
-#app .footer {
+#footer {
     color: white;
     font-size: 0.8rem;
     font-weight: bold;
     padding: 10px 0 5px 0;
+    text-align: center;
 }
 
-#app .header a,
-#app .footer a {
+#header a,
+#footer a {
     color: white;
     text-decoration: none;
 }
